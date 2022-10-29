@@ -3,9 +3,9 @@ from werkzeug.utils import secure_filename
 from tensorflow import keras
 from keras.preprocessing.image import ImageDataGenerator
 import tensorflow as tf
-#from PIL import Image
-#import numpy as np
-#import scipy
+from PIL import Image
+import numpy as np
+import scipy
 import os
 import pandas as pd
 import glob
