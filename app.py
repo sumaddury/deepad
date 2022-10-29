@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from tensorflow import keras
 from keras.preprocessing.image import ImageDataGenerator
-
+import tensorflow as tf
 #from PIL import Image
 #import numpy as np
 #import scipy
@@ -32,7 +32,7 @@ except:
 model_file = "model"
 #model_file = os.path.join(model_file, "saved_model.pb")
 #model = tf.keras.models.load_model('model')
-model = keras.models.load_model(model_file)
+model = tf.keras.models.load_model(model_file)
 app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = 'uploaded/image'
