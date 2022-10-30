@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-from tensorflow import keras
+from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
-import tensorflow as tf
 # from PIL import Image
 # import numpy as np
 # import scipy
 import os
-import pandas as pd
+from pandas import DataFrame
 import glob
 
 try:
@@ -32,7 +31,7 @@ except:
 model_file = "model"
 model_file = os.path.join(model_file, "saved_model.h5")
 #model = tf.keras.models.load_model('model')
-model = tf.keras.models.load_model(model_file)
+model = load_model(model_file)
 app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = 'uploaded/image'
@@ -54,7 +53,7 @@ def finds():
 	l.sort(key=os.path.getmtime, reverse=True)
 	f = os.path.basename(l[0]).split()
 	v = [-1]
-	df = pd.DataFrame(list(zip(f,v)), columns=['ID', 'Value'])
+	df = DataFrame(list(zip(f,v)), columns=['ID', 'Value'])
 
 	test_generator = test_datagen.flow_from_dataframe(
 		dataframe=df,
