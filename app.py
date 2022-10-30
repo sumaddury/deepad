@@ -29,7 +29,7 @@ except:
 # pre_model.save("saved_model")
 # quit(0)
 
-model_file = "model"
+model_file = "model/saved_model.h5"
 #model_file = os.path.join(model_file, "saved_model.pb")
 #model = tf.keras.models.load_model('model')
 model = tf.keras.models.load_model(model_file)
