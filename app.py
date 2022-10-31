@@ -7,6 +7,7 @@ from keras.preprocessing.image import ImageDataGenerator
 # import numpy as np
 # import scipy
 import os
+import scipy
 from pandas import DataFrame
 import glob
 
