@@ -5,7 +5,7 @@ from PIL import Image
 from keras.preprocessing.image import ImageDataGenerator
 # from PIL import Image
 # import numpy as np
-# import scipy
+import scipy
 import os
 from pandas import DataFrame
 import glob
