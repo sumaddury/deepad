@@ -69,7 +69,7 @@ def finds():
 	pred = model.predict(test_generator)
 #return str(vals[np.argmax(pred)])
 	value = str(pred[0][0])
-	output_string = "Composite Amyloid-Beta SUVR = " + value + " ±  0.0489"
+	output_string = "Composite Amyloid-Beta SUVR = " + value + " ±  0.0542"
 	return str(output_string)
 
 @app.route('/uploader', methods = ['GET', 'POST'])
